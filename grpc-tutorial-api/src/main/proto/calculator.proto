@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+//缺省补偿
+package calculator;
+
+option java_multiple_files = true;
+option java_generic_services = true;
+option java_package = "com.syoka.grpc.tutorial.api";
+option java_outer_classname = "CalculatorService";
+
+
+service Calculator {
+  rpc Add (Element) returns (Result) {}
+}
+
+message Element {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message Result {
+  int64 result = 1;
+}
